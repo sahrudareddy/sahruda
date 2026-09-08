@@ -113,12 +113,12 @@ formatted_agent_chain = (
 ).with_types(input_type=AgentInput, output_type=str)
 
 # --- 3. FastAPI App ---
-##Need To Code 
+##Need To Code
 app=FastAPI(name="indian weather and cinema agent")
-add_route =(app,
-            formatted_agent_chain,
-            path="/agent",
-            playground_type="default")
+add_routes(app,
+           formatted_agent_chain,
+           path="/agent",
+           playground_type="default")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
